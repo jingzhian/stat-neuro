@@ -1,5 +1,7 @@
 function  U = TRT(dNt,h,lambda)
 
+% This is a new comment - test git
+
 % Parameters
 %   dNt = discrete-time spike train
 %   lambda = rate of the process
