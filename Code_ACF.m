@@ -6,6 +6,8 @@ function c = ACF(z,m)
 %      to return
 
 a = 1;
+b = 2;
+
 zhat = z - mean(z);
 autocorr = conv(zhat,zhat(end:-1:1))/length(z);
 
