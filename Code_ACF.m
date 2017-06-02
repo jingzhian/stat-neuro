@@ -5,6 +5,7 @@ function c = ACF(z,m)
 %   m: number of lags of the auto-correlation function of z
 %      to return
 
+a = 1;
 zhat = z - mean(z);
 autocorr = conv(zhat,zhat(end:-1:1))/length(z);
 
