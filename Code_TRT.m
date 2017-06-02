@@ -2,16 +2,18 @@ function  U = TRT(dNt,h,lambda)
 
 % This is a new comment - test git
 
+% This is another comment
+
 % Parameters
 %   dNt = discrete-time spike train
 %   lambda = rate of the process
 %   h = sampling interval of CT process from which dNt obtained
-% 
+%
 %    N.B: dNt and lambda are assumed to be ROW vectors
 %
 % Output
-%   U = 1 - exp(rescISI), where rescISI are rescaled interspike 
-%       intervals 
+%   U = 1 - exp(rescISI), where rescISI are rescaled interspike
+%       intervals
 
 
 tempdNt = find(dNt~=0); % DT locations of spikes
@@ -27,17 +29,17 @@ for i=0:length(tempdNt)-1
 
            rescfac(i+1) = simp(lambda(1:tempdNt(i+1)),h);
        else
-           rescfac(i+1) = h*trapz(lambda(1:tempdNt(i+1)));               
+           rescfac(i+1) = h*trapz(lambda(1:tempdNt(i+1)));
        end
-    
+
    else
-       
+
         if length(lambda(tempdNt(i):tempdNt(i+1))) > 2
             rescfac(i+1) = simp(lambda(tempdNt(i):tempdNt(i+1)),h);
         else
             rescfac(i+1) = h*trapz(lambda(tempdNt(i):tempdNt(i+1)));
         end
-        
+
    end
 end
 
